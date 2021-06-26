@@ -1,3 +1,4 @@
+mod eval;
 mod parse;
 
 use std::fmt::Write;
@@ -5,7 +6,7 @@ use std::fmt::{self, Display, Formatter};
 
 pub use parse::parse_expr;
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub enum LispVal {
     Atom(String),
     List(Vec<LispVal>),
