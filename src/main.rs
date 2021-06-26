@@ -8,7 +8,7 @@ fn main() {
 
 fn read_expr(input: &str) -> String {
     match parse_expr(input) {
-        Ok((_, val)) => format!("Found value: {:?}", val),
+        Ok((_, val)) => format!("Found {}", val),
         Err(err) => format!("No match: {}", err),
     }
 }
