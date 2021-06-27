@@ -11,10 +11,12 @@ pub enum LispVal {
     Atom(String),
     List(Vec<LispVal>),
     DottedList(Vec<LispVal>, Box<LispVal>),
-    Number(isize),
+    Number(Integer),
     String(String),
     Bool(bool),
 }
+
+pub(crate) type Integer = isize;
 
 impl Display for LispVal {
     fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
